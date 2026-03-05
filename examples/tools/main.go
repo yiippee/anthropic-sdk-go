@@ -6,10 +6,12 @@ import (
 	"fmt"
 
 	"github.com/anthropics/anthropic-sdk-go"
+	"github.com/anthropics/anthropic-sdk-go/option"
 )
 
 func main() {
-	client := anthropic.NewClient()
+	opts := option.WithBaseURL("http://localhost:9090")
+	client := anthropic.NewClient(opts)
 
 	content := "What is the weather in San Francisco, CA?"
 
